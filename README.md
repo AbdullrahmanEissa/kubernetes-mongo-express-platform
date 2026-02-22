@@ -205,5 +205,4 @@ This is the same workflow used in real DevOps and Platform Engineering roles.
 ## 👤 Author
 
 Built by a Linux & DevOps engineer with a focus on **practical Kubernetes systems** and production-grade infrastructure design.
-قولّي 👊
 ```
