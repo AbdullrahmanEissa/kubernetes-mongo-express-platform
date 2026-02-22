@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: express-ingress
+  labels:
+    app.kubernetes.io/name: express-ingerss
+spec:
+  rules:
+  - host: express.local
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: express-service
+            port: 
+              number: 8081

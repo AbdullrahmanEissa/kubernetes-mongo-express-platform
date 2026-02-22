@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-deployment
+spec:
+  selector:
+    matchLabels:
+      app: express-deployment
+  template:
+    metadata:
+      labels:
+        app: express-deployment
+    spec:
+      containers:
+      - name: express-deployment
+        image: mongo-express
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        envFrom:
+        - configMapRef:
+            name: express-config
+        - secretRef:
+            name: mongo-secret
+        ports:
+        - containerPort: 8081
